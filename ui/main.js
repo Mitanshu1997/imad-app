@@ -5,8 +5,6 @@ console.log('Loaded!');
 var element = document.getElementById('main-text');
 element.innerHTML = 'New Value';
 
-console.log('loaded rest....heehaa!');
-
 //Move the image
 var img = document.getElementById('madi');
 
@@ -20,4 +18,4 @@ img.onclick = function(){
     var interval = setInterval(moveRight, 100);
 };
 
-onsole.log('loaded rest....heehaa!');
+console.log('loaded rest....heehaa!');
