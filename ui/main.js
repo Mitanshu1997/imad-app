@@ -1,4 +1,4 @@
-console.log('Loaded!');
+/*console.log('Loaded!');
 
 //Change the text of the main-text div
 
@@ -19,7 +19,7 @@ img.onclick = function(){
 };
 
 console.log('loaded rest....heehaa!');
-
+*/
 //counter code
 var button = document.getElementById('counter');
 var counter = 0;
