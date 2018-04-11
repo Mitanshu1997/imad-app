@@ -48,10 +48,35 @@ button.onclick = function() {
 
 //Submit name
 var nameInput = document.getElementById('name');
-var namea = nameInput.value;
+var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     //Make a request to the server and send the name
+    //Create a request object
+    var request = new XMLHttpRequest();
+    
+    //Capture the response and store it in a variable
+    request.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE){
+            //When the request is successfully completed we want to take some action
+            if (request.status === 200) {
+                //Capture a list of names and render it as a list.
+                var names = request.resposneText;
+                names = JSON.parse(names); //Convert back from a string to an array
+                var list = '';
+                for (var i=0; i<names.length; i++){
+                list += '<li>' + names[i] + '</li>';
+                }
+                var ul = document.getElementById('namelist');
+                ul.innerHTML = list;
+            }
+        }
+        // If not done yet, we dont want to do anything
+    };
+    
+    //Make the request
+    request.open('GET', 'http://khuranamitanshu.imad.hasura-app.io/submit-name?name=' + name, true);
+    request.send(null);
     
     //Capture a list of names and render it as a list.
     var names = ['name1', 'name2', 'name3','name4'];
