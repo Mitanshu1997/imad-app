@@ -1,7 +1,7 @@
 var express = require('express'); //express library is used to create a web server, like listening on a portor handling http connections
 var morgan = require('morgan'); //morgan is used to generate logs
 var path = require('path');
-var pool = require('pg').Pool;
+//var pool = require('pg').Pool;
 
 var config = {
     user : "khuranamitanshu",
