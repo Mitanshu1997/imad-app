@@ -2,6 +2,8 @@ var express = require('express'); //express library is used to create a web serv
 var morgan = require('morgan'); //morgan is used to generate logs
 var path = require('path');
 //var pool = require('pg').Pool;
+console.log('hi')
+
 
 var config = {
     user : "khuranamitanshu",
