@@ -1,15 +1,15 @@
 var express = require('express'); //express library is used to create a web server, like listening on a portor handling http connections
 var morgan = require('morgan'); //morgan is used to generate logs
 var path = require('path');
-//var pool = require('pg').Pool;
+var pool = require('pg').Pool;
 console.log('hi')
 
 
 var config = {
     user : "khuranamitanshu",
     database : "khuranamitanshu",
-    host : "http://db.imad.hasura-app.io",
-    port : 5432,
+    host : "db.imad.hasura-app.io",
+    port : '5432',
     password : process.env.DB_PASSWORD
     
 }
@@ -91,7 +91,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-//var pool = new Pool(config);
+var pool = new Pool(config);
 app.get('test-db', function(req, res) {
     //make a select request
     //return a reponse with the results
