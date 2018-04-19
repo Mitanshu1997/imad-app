@@ -1,7 +1,7 @@
 var express = require('express'); //express library is used to create a web server, like listening on a portor handling http connections
 var morgan = require('morgan'); //morgan is used to generate logs
 var path = require('path');
-var pool = require('pg').Pool;
+var Pool = require('pg').Pool;
 console.log('hi')
 
 
@@ -90,7 +90,7 @@ function createTemplate (data) {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var pool = require('pg').Pool;
+
 var pool = new Pool(config);
 app.get('test-db', function(req, res) {
     //make a select request
