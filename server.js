@@ -90,7 +90,7 @@ function createTemplate (data) {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+var pool = require('pg').Pool;
 var pool = new Pool(config);
 app.get('test-db', function(req, res) {
     //make a select request
